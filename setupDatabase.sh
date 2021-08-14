@@ -1,9 +1,9 @@
 #!/bin/bash
 set -exu
-python  manage.py makemigrations
-python  manage.py migrate
+python  /node-app/manage.py makemigrations
+python  /node-app/manage.py migrate
 export DJANGO_SUPERUSER_PASSWORD='Pass123'
-python manage.py createsuperuser \
+python /node-app/manage.py createsuperuser \
     --no-input \
     --username="admin" \
     --email="admin@admin.com"
