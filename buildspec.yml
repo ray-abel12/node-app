@@ -1,4 +1,11 @@
 version: 0.2
+env:
+  variable:
+    POSTGRES_HOST : "database-1.cjhenbij1ci1.eu-west-2.rds.amazonaws.com"
+    POSTGRES_DB : "database-1"
+    POSTGRES_USER : "postgres"
+    POSTGRES_PASSWORD : "Secure1251"
+    SECRET_KEY : "django-insecure-9jpe$j7l#&73=(--hn8ul50w#lam1q+_4p*#p1n)j=2j9*@llb"
 phases:
   pre_build:
     commands:

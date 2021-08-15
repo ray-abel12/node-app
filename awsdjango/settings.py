@@ -21,7 +21,7 @@ import environ
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '12223jjgnnmffffjfjjf'
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -76,11 +76,11 @@ WSGI_APPLICATION = 'awsdjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': "django.db.backends.postgresql",
-        'HOST': 'database-1.cjhenbij1ci1.eu-west-2.rds.amazonaws.com',
+        'HOST': config("POSTGRES_HOST"),
         'PORT': 5432,
-        'NAME': 'database-1',
-        'USER': 'postgres',
-        'PASSWORD': 'Secure1251',
+        'NAME': config("POSTGRES_DB"),
+        'USER': config("POSTGRES_USER"),
+        'PASSWORD': config("POSTGRES_PASSWORD"),
 
     }
 }
