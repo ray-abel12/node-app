@@ -1,15 +1,10 @@
 version: 0.2
-env:
-    POSTGRES_HOST:=$POSTGRES_HOST
-    POSTGRES_DB=$POSTGRES_DB
-    POSTGRES_USER=$POSTGRES_USER
-    POSTGRES_PASSWORD:=$POSTGRES_PASSWORD
 
 phases:
   pre_build:
     commands:
-      - echo POSTGRES_PASSWORD
-      - echo POSTGRES_USER
+      - echo $POSTGRES_PASSWORD
+      - echo $POSTGRES_USER
       - echo Logging in to Amazon ECR...
       - aws --version
       - aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin 829586007552.dkr.ecr.eu-west-2.amazonaws.com
