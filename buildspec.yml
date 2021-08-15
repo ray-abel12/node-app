@@ -6,7 +6,7 @@ phases:
   pre_build:
     commands:
       - echo
-      - echo "S3 bucket is S3_ENVIRONMENT_BUCKET"
+      - echo "S3 bucket is $S3_ENVIRONMENT_BUCKET"
       - echo Logging in to Amazon ECR...
       - aws --version
       - aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin 829586007552.dkr.ecr.eu-west-2.amazonaws.com
