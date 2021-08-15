@@ -19,7 +19,7 @@ RUN python manage.py migrate
 #   username='$DJANGO_SU_NAME', \
 #   email='$DJANGO_SU_EMAIL', \
 #   password='$DJANGO_SU_PASSWORD')"
-RUN python manage.py create_superuser( username='$DJANGO_SU_NAME', \
-   email='$DJANGO_SU_EMAIL', \
-   password='$DJANGO_SU_PASSWORD')
+#RUN python manage.py create_superuser( username='$DJANGO_SU_NAME', \
+#   email='$DJANGO_SU_EMAIL', \
+#   password='$DJANGO_SU_PASSWORD')
 CMD ["python","manage.py","runserver","0.0.0.0:8000"]
