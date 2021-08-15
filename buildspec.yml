@@ -1,12 +1,11 @@
 version: 0.2
-env:
-  variables:
-    POSTGRES_HOST: "database-1.cjhenbij1ci1.eu-west-2.rds.amazonaws.com"
-    POSTGRES_DB: "database-1"
-    POSTGRES_USER: "postgres"
-    POSTGRES_PASSWORD: "Secure1251"
-
-
+#env:
+#  variables:
+#    POSTGRES_HOST: "database-1.cjhenbij1ci1.eu-west-2.rds.amazonaws.com"
+#    POSTGRES_DB: "database-1"
+#    POSTGRES_USER: "postgres"
+#    POSTGRES_PASSWORD: "Secure1251"
+#
 phases:
   pre_build:
     commands:
