@@ -1,6 +1,6 @@
 version: 0.2
 env:
-  variable:
+  variables:
     POSTGRES_HOST : "database-1.cjhenbij1ci1.eu-west-2.rds.amazonaws.com"
     POSTGRES_DB : "database-1"
     POSTGRES_USER : "postgres"
