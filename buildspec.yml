@@ -1,13 +1,4 @@
 version: 0.2
-env:
-  parameter-store:
-    POSTGRES_DB: "database-1"
-    POSTGRES_USER: "postgres"
-    POSTGRES_PASSWORD: "Secure1251"
-    POSTGRES_HOST: "database-1.cjhenbij1ci1.eu-west-2.rds.amazonaws.com"
-    SECRET_KEY: " django-insecure-9jpe$j7l#&73=(--hn8ul50w#lam1q+_4p*#p1n)j=2j9*@llb"
-
-
 phases:
   pre_build:
     commands:
@@ -23,7 +14,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build --build-arg POSTGRES_HOST=${POSTGRES_HOST} --build-arg POSTGRES_DB=${POSTGRES_DB} --build-arg POSTGRES_USER=${POSTGRES_USER} --build-arg POSTGRES_PASSWORD=${POSTGRES_PASSWORD} --build-arg SECRET_KEY=${SECRET_KEY} . -t $REPOSITORY_URI:latest
+      - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
@@ -32,6 +23,6 @@ phases:
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing image definitions file...
-      - printf '[{"name":"%s","imageUri":"%s"}]' $CONTAINER_NAME $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - printf '[{"name":"lampplay","imageUri":"%s"}]' $CONTAINER_NAME $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
     files: imagedefinitions.json
