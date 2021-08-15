@@ -21,7 +21,8 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t $REPOSITORY_URI:latest .
+      - ENV POSTGRES_HOST=database-1.cjhenbij1ci1.eu-west-2.rds.amazonaws.com
+      - docker build -t $REPOSITORY_URI:latest --build-arg POSTGRES_HOST=$POSTGRES_HOST --build-arg POSTGRES_DB=$POSTGRES_DB --build-arg POSTGRES_USER=$POSTGRES_USER --build-arg POSTGRES_PASSWORD=POSTGRES_PASSWORD
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
