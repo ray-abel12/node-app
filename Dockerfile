@@ -6,10 +6,10 @@ RUN pip install -r requirements.txt
 COPY . /code/
 EXPOSE 8000
 
-ENV DJANGO_DB_NAME='database-1'
-ENV DJANGO_SU_NAME=admin
-ENV DJANGO_SU_EMAIL=admin@my.company
-ENV DJANGO_SU_PASSWORD=mypass
+#ENV DJANGO_DB_NAME='database-1'
+#ENV DJANGO_SU_NAME=admin
+#ENV DJANGO_SU_EMAIL=admin@my.company
+#ENV DJANGO_SU_PASSWORD=mypass
 RUN python manage.py makemigrations
 RUN python manage.py migrate
 
