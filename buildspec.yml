@@ -1,11 +1,10 @@
 version: 0.2
 env:
   variables:
-    S3_ENVIRONMENT_BUCKET: s3://envfolder/testing/test/.env
+    s3://envfolder/testing/test/.env
 phases:
   pre_build:
     commands:
-      - echo
       - echo "S3 bucket is $S3_ENVIRONMENT_BUCKET"
       - echo Logging in to Amazon ECR...
       - aws --version
