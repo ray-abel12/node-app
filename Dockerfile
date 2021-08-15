@@ -5,11 +5,11 @@ COPY requirements.txt /code/
 RUN pip install -r requirements.txt
 COPY . /code/
 EXPOSE 8000
-ENV POSTGRES_HOST=database-1.cjhenbij1ci1.eu-west-2.rds.amazonaws.com
-ENV POSTGRES_DB=database-1
-ENV POSTGRES_USER=postgres
-ENV POSTGRES_PASSWORD=Secure1251
-ENV DJANGO_DB_NAME=default
+#ENV POSTGRES_HOST=database-1.cjhenbij1ci1.eu-west-2.rds.amazonaws.com
+#ENV POSTGRES_DB=database-1
+#ENV POSTGRES_USER=postgres
+#ENV POSTGRES_PASSWORD=Secure1251
+#ENV DJANGO_DB_NAME=default
 ENV DJANGO_SU_NAME=admin
 ENV DJANGO_SU_EMAIL=admin@my.company
 ENV DJANGO_SU_PASSWORD=mypass
