@@ -76,11 +76,11 @@ WSGI_APPLICATION = 'awsdjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': "django.db.backends.postgresql",
-        'HOST': "$POSTGRES_HOST",
+        'HOST': config("POSTGRES_HOST"),
         'PORT': 5432,
-        'NAME': "$POSTGRES_DB",
-        'USER': "$POSTGRES_USER",
-        'PASSWORD': "$POSTGRES_PASSWORD",
+        'NAME': config("POSTGRES_DB"),
+        'USER': config("POSTGRES_USER"),
+        'PASSWORD': config("POSTGRES_PASSWORD"),
 
     }
 }
