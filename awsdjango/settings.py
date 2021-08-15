@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'awsdjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': "django.db.backends.postgresql",
-        'HOST': config("POSTGRES_HOST"),
+        'HOST': echo config("POSTGRES_HOST"),
         'PORT': 5432,
         'NAME': config("POSTGRES_DB"),
         'USER': config("POSTGRES_USER"),
