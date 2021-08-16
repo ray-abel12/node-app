@@ -1,4 +1,4 @@
-FROM python:3
+FROM public.ecr.aws/sam/build-python3.7:latest
 
 WORKDIR /code
 COPY requirements.txt /code/
