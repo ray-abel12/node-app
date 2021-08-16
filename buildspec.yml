@@ -1,15 +1,11 @@
 version: 0.2
-#- aws s3 cp s3://envfolder/testing/test/test.env
+#- aws s3 cp s3://${S3_ENVIRONMENT_BUCKET}/${Project}/${Service}/${ENVIRONMENT_FILE}.env
 #env:
 #  variables:
 #    S3_ENVIRONMENT_BUCKET: "/envfolder"
 #    Project: "testing"
 #    Service: "test"
 #    ENVIRONMENT_FILE: "test"
-env:
-  variables:
-    SECRET_KEY: 123456754332234
-
 phases:
   pre_build:
     commands:
@@ -24,7 +20,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build --env-file ./.env . -t $REPOSITORY_URI:latest
+      - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
