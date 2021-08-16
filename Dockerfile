@@ -5,7 +5,9 @@ COPY requirements.txt /code/
 RUN pip install -r requirements.txt
 COPY . /code/
 EXPOSE 8000
-CMD ["python","manage.py","runserver","0.0.0.0:8000"]
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+CMD ["/code/entrypoint.sh"]
 #ENV DJANGO_DB_NAME='database-1'
 #ENV DJANGO_SU_NAME=admin
 #ENV DJANGO_SU_EMAIL=admin@my.company
