@@ -10,7 +10,7 @@ EXPOSE 8000
 #ENV DJANGO_SU_NAME=admin
 #ENV DJANGO_SU_EMAIL=admin@my.company
 #ENV DJANGO_SU_PASSWORD=mypass
-SECRET_KEY=$SECRET_KEY
+ENV SECRET_KEY=$SECRET_KEY
 RUN python manage.py makemigrations
 RUN python manage.py migrate
 
