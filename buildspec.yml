@@ -1,7 +1,11 @@
 version: 0.2
+- aws s3 cp s3://${S3_ENVIRONMENT_BUCKET}/${Project}/${Service}/${ENVIRONMENT_FILE}.env
 env:
   variables:
-    s3://envfolder/testing/test/.env
+    S3_ENVIRONMENT_BUCKET: "/envfolder"
+    Project: "testing"
+    Service: "test"
+    ENVIRONMENT_FILE: "test"
 phases:
   pre_build:
     commands:
